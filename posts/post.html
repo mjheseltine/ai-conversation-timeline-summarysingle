@@ -343,12 +343,21 @@ function renderRepliesWithShowMore(replies) {
   if (hiddenReplyEls.length > 0) {
     showMoreWrap.style.display = "flex";
     showMoreBtn.textContent = `Show more comments (${hiddenReplyEls.length})`;
-    showMoreBtn.onclick = () => {
-      hiddenReplyEls.forEach(e => (e.style.display = ""));
-      hiddenReplyEls = [];
-      showMoreWrap.style.display = "none";
-      // Reply box is already below comments, so it naturally moves down.
-    };
+  showMoreBtn.onclick = () => {
+  const revealedCount = hiddenReplyEls.length;
+
+  hiddenReplyEls.forEach(e => (e.style.display = ""));
+  hiddenReplyEls = [];
+  showMoreWrap.style.display = "none";
+
+  // ✅ Qualtrics tracking
+  window.parent.postMessage({
+    type: "SHOW_MORE_COMMENTS",
+    postId,
+    revealedCount
+  }, "*");
+};
+
   } else {
     showMoreWrap.style.display = "none";
   }
