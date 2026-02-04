@@ -82,47 +82,6 @@ body { background: var(--bg); margin: 20px; }
 .liked { color: #e0245e; }
 .retweeted { color: #17bf63; }
 
-.comment-box {
-  margin-top: 10px;
-  display: none;
-}
-
-.comment-box textarea {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  padding: 8px;
-  font-size: 14px;
-}
-
-.comment-controls {
-  display: flex;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-.comment-box button {
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.emoji-panel {
-  display: none;
-  margin-top: 6px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 6px;
-  font-size: 20px;
-}
-
-.emoji-panel span { cursor: pointer; margin: 4px; }
-
 .sidebar { position: sticky; top: 20px; }
 
 .widget {
@@ -151,23 +110,6 @@ body { background: var(--bg); margin: 20px; }
 }
 
 #trendingList li:hover { text-decoration: underline; }
-
-/* AI SUMMARY (TIMELINE) */
-.ai-summary {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background: #fffdf8;
-  border: 1px solid #fbe5b3;
-  font-size: 14px;
-}
-
-.ai-summary .label {
-  font-weight: 700;
-  font-size: 13px;
-  margin-bottom: 4px;
-}
-
 </style>
 </head>
 
@@ -259,37 +201,13 @@ function createPost(data) {
         ${data.handle} · ${data.timestamp}
       </div>
 
-     <div class="text">${data.text}</div>
+      <div class="text">${data.text}</div>
 
-${data.image ? `<img src="${data.image}" class="thumb">` : ""}
-
-${data.aiSummary ? `
-  <div class="ai-summary">
-    <div class="label">AI Summary</div>
-    <div>${data.aiSummary}</div>
-  </div>
-` : ""}
-
+      ${data.image ? `<img src="${data.image}" class="thumb">` : ""}
 
       <div class="actions">
         <button class="like ${state.liked ? "liked":""}">❤️ <span>${state.likes}</span></button>
         <button class="retweet ${state.retweeted ? "retweeted":""}">🔁 <span>${state.retweets}</span></button>
-        <button class="comment">💬 <span>${data.replies.length + state.comments.length}</span></button>
-      </div>
-
-      <div class="comment-box">
-        <textarea placeholder="Write a comment..."></textarea>
-
-        <div class="comment-controls">
-          <button class="emoji-toggle">😊</button>
-          <button class="submit">Reply</button>
-        </div>
-
-        <div class="emoji-panel">
-          <span>😀</span><span>😂</span><span>😊</span><span>😍</span>
-          <span>🤔</span><span>😡</span><span>😢</span><span>👍</span>
-          <span>👎</span><span>🎉</span><span>❤️</span><span>🔥</span>
-        </div>
       </div>
 
       <a class="view-link" href="posts/post.html?id=${data.id}">View conversation →</a>
@@ -308,12 +226,6 @@ ${data.aiSummary ? `
 
   const likeBtn = wrapper.querySelector(".like");
   const rtBtn = wrapper.querySelector(".retweet");
-  const commentBtn = wrapper.querySelector(".comment");
-  const box = wrapper.querySelector(".comment-box");
-  const ta = wrapper.querySelector("textarea");
-  const submit = wrapper.querySelector(".submit");
-  const emojiToggle = wrapper.querySelector(".emoji-toggle");
-  const emojiPanel = wrapper.querySelector(".emoji-panel");
 
   likeBtn.onclick = () => {
     state.liked = !state.liked;
@@ -340,46 +252,6 @@ ${data.aiSummary ? `
       type: "USER_RETWEET",
       postId: data.id,
       count: state.retweets
-    }, "*");
-  };
-
-  commentBtn.onclick = () => {
-    box.style.display = box.style.display === "block" ? "none" : "block";
-    ta.focus();
-
-    window.parent.postMessage({
-      type: "COMMENT_BOX_OPEN",
-      postId: data.id
-    }, "*");
-  };
-
-  emojiToggle.onclick = () => {
-    emojiPanel.style.display =
-      emojiPanel.style.display === "block" ? "none" : "block";
-  };
-
-  emojiPanel.querySelectorAll("span").forEach(e => {
-    e.onclick = () => {
-      ta.value += e.textContent;
-      ta.focus();
-    };
-  });
-
-  submit.onclick = () => {
-    const txt = ta.value.trim();
-    if (!txt) return;
-
-    state.comments.push(txt);
-    ta.value = "";
-    box.style.display = "none";
-    commentBtn.querySelector("span").textContent =
-      data.replies.length + state.comments.length;
-    save();
-
-    window.parent.postMessage({
-      type: "USER_COMMENT",
-      postId: data.id,
-      text: txt
     }, "*");
   };
 
@@ -433,19 +305,6 @@ document.getElementById("searchInput").addEventListener("input", e => {
   trendingList.appendChild(li);
 });
 
-
-// ---------- Weather ----------
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(pos => {
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&current_weather=true`)
-      .then(r => r.json())
-      .then(d => {
-        weather.innerHTML =
-          `<strong>${Math.round(d.current_weather.temperature)}°C</strong><br>
-           Wind ${d.current_weather.windspeed} km/h`;
-      });
-  });
-}
 </script>
 
 </body>
