@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Conversation</title>
+
+<style>
+:root {
+  --bg:#f6f7fb;
+  --card:#fff;
+  --muted:#6b7280;
+  --accent:#1f6feb;
+  --radius:12px;
+  --shadow:0 4px 12px rgba(35,40,50,0.08);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto;
+}
+
+body { background:var(--bg); margin:20px; }
+
+.container { max-width:800px; margin:auto; }
+
+.top-nav {
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+
+
+
+.home-btn {
+  text-decoration:none;
+  font-weight:600;
+  color:#1f6feb;
+  background:#eef2ff;
+  padding:8px 14px;
+  border-radius:20px;
+}
+
+.post {
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow:var(--shadow);
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.avatar {
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:700;
+}
+
+.content { flex:1; }
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+}
+
+.name {
+  font-weight:700;
+  margin-right:6px;
+}
+
+.text {
+  margin-top:6px;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.thumb {
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.actions {
+  margin-top:12px;
+  display:flex;
+  gap:20px;
+  color:var(--muted);
+}
+
+.actions button {
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:4px 6px;
+  border-radius:6px;
+}
+
+.actions button:hover { background:#f1f5f9; }
+
+.liked { color:#e0245e; }
+.retweeted { color:#17bf63; }
+
+/* AI SUMMARY */
+.ai-summary {
+  background:#fffdf8;
+  border:1px solid #fbe5b3;
+}
+
+/* USER COMMENT HIGHLIGHT */
+.user-comment {
+  background:#f0f7ff;
+  border:1px solid #dbeafe;
+}
+
+/* COMMENT BOX */
+.comment-box {
+  margin-bottom:16px;
+}
+
+.comment-box textarea {
+  width:100%;
+  min-height:80px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  padding:8px;
+  font-size:14px;
+}
+
+.comment-box button {
+  margin-top:6px;
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:7px 14px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+  
+  .bottom-nav {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <a class="home-btn" href="../index.html">← Return to timeline</a>
+  </div>
+
+  <div id="thread"></div>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a class="home-btn" href="../index.html">← Return to timeline</a>
+  </div>
+
+</div>
+
+
+  <div id="thread"></div>
+
+</div>
+
+<script>
+// ---------- Helpers ----------
+function initials(name) {
+  return name.split(/\s+/).map(w => w[0]).join("").slice(0,2).toUpperCase();
+}
+
+function colorFromName(name) {
+  const colors = [
+    "linear-gradient(135deg,#1f6feb,#3b82f6)",
+    "linear-gradient(135deg,#10b981,#34d399)",
+    "linear-gradient(135deg,#f59e0b,#fbbf24)",
+    "linear-gradient(135deg,#ec4899,#f472b6)",
+    "linear-gradient(135deg,#6366f1,#8b5cf6)"
+  ];
+  return colors[name.charCodeAt(0) % colors.length];
+}
+
+// ---------- Load ID + State ----------
+const postId = new URLSearchParams(location.search).get("id");
+
+let timelineState = JSON.parse(sessionStorage.getItem("timelineState") || "{}");
+
+const state = timelineState[postId] ||= {
+  likes:0,
+  retweets:0,
+  comments:[],
+  liked:false,
+  retweeted:false
+};
+
+function save() {
+  timelineState[postId] = state;
+  sessionStorage.setItem("timelineState", JSON.stringify(timelineState));
+}
+
+const thread = document.getElementById("thread");
+
+// ---------- Timing ----------
+const convoStart = Date.now();
+
+// ---------- Load Post ----------
+fetch("../data/posts.json")
+  .then(r => r.json())
+  .then(posts => {
+    const post = posts.find(p => p.id === postId);
+
+    if (!state.initialized) {
+      state.likes = post.likes || 0;
+      state.retweets = post.retweets || 0;
+      state.initialized = true;
+      save();
+    }
+
+    renderMainPost(post);
+    renderAISummary(post);
+    renderCommentBox();      // ⬅ MOVED HERE
+    post.replies.forEach(r => renderReply(r));
+    renderUserComments();
+  });
+
+// ---------- Render Main ----------
+function renderMainPost(p) {
+  const el = document.createElement("article");
+  el.className = "post";
+
+  el.innerHTML = `
+    <div class="avatar" style="background:${colorFromName(p.author)}">
+      ${initials(p.author)}
+    </div>
+    <div class="content">
+      <div class="meta">
+        <span class="name">${p.author}</span>
+        ${p.handle} · ${p.timestamp}
+      </div>
+      <div class="text">${p.text}</div>
+      ${p.image ? `<img src="../${p.image}" class="thumb">` : ""}
+      <div class="actions">
+        <button class="like ${state.liked ? "liked":""}">❤️ <span>${state.likes}</span></button>
+        <button class="retweet ${state.retweeted ? "retweeted":""}">🔁 <span>${state.retweets}</span></button>
+        <button class="comment">💬 <span>${p.replies.length + state.comments.length}</span></button>
+      </div>
+    </div>
+  `;
+
+  thread.appendChild(el);
+
+  el.querySelector(".like").onclick = () => {
+    state.liked = !state.liked;
+    state.likes += state.liked ? 1 : -1;
+    el.querySelector(".like span").textContent = state.likes;
+    save();
+
+    window.parent.postMessage({ type:"USER_LIKE", postId, count:state.likes }, "*");
+  };
+
+  el.querySelector(".retweet").onclick = () => {
+    state.retweeted = !state.retweeted;
+    state.retweets += state.retweeted ? 1 : -1;
+    el.querySelector(".retweet span").textContent = state.retweets;
+    save();
+
+    window.parent.postMessage({ type:"USER_RETWEET", postId, count:state.retweets }, "*");
+  };
+}
+
+// ---------- AI Summary ----------
+function renderAISummary(p) {
+  const el = document.createElement("article");
+  el.className = "post ai-summary";
+
+  el.innerHTML = `
+    <div class="avatar">🤖</div>
+    <div class="content">
+      <div class="name">AI Summary</div>
+      <div class="text">${p.aiSummary}</div>
+    </div>
+  `;
+
+  thread.appendChild(el);
+}
+
+// ---------- COMMENT BOX (MOVED) ----------
+function renderCommentBox() {
+  const box = document.createElement("div");
+  box.className = "comment-box";
+
+  box.innerHTML = `
+    <textarea id="userReply" placeholder="Write a reply..."></textarea>
+    <button id="postReply">Reply</button>
+  `;
+
+  thread.appendChild(box);
+
+  box.querySelector("#postReply").onclick = () => {
+    const ta = box.querySelector("#userReply");
+    const txt = ta.value.trim();
+    if (!txt) return;
+
+    state.comments.push(txt);
+    save();
+
+    window.parent.postMessage({
+      type:"USER_COMMENT",
+      postId,
+      text:txt
+    }, "*");
+
+    location.reload();
+  };
+}
+
+// ---------- Replies ----------
+function renderReply(r) {
+  const el = document.createElement("article");
+  el.className = "post";
+
+  el.innerHTML = `
+    <div class="avatar" style="background:${colorFromName(r.author)}">
+      ${initials(r.author)}
+    </div>
+    <div class="content">
+      <div class="name">${r.author}</div>
+      <div class="text">${r.text}</div>
+    </div>
+  `;
+
+  thread.appendChild(el);
+}
+
+// ---------- User Comments ----------
+function renderUserComments() {
+  state.comments.forEach(c => {
+    const el = document.createElement("article");
+    el.className = "post user-comment";
+
+    el.innerHTML = `
+      <div class="avatar" style="background:#2563eb">YOU</div>
+      <div class="content">
+        <div class="name">You</div>
+        <div class="text">${c}</div>
+      </div>
+    `;
+
+    thread.appendChild(el);
+  });
+}
+
+// ---------- Scroll Depth ----------
+window.addEventListener("scroll", () => {
+  const depth = Math.round(
+    (window.scrollY + window.innerHeight) /
+    document.body.scrollHeight * 100
+  );
+
+  window.parent.postMessage({
+    type:"SCROLL_DEPTH_CONVO",
+    postId,
+    depth
+  }, "*");
+});
+
+// ---------- Time on Conversation ----------
+window.addEventListener("beforeunload", () => {
+  window.parent.postMessage({
+    type:"TIME_ON_CONVO",
+    postId,
+    ms:Date.now() - convoStart
+  }, "*");
+});
+</script>
+
+</body>
+</html>
