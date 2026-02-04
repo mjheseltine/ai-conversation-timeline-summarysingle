@@ -1,8 +1,8 @@
 [
   {
     "id": "post1",
-    "author": "OtherSideNotes",
-    "handle": "@othersidenotes",
+    "author": "PoliticsNews",
+    "handle": "@politicsnews",
     "text": "A U.S. official has alleged wrongdoing by U.S. spy chief Tulsi Gabbard in a complaint that is so highly classified it has sparked months of wrangling over how to share it with Congress, according to people familiar with the matter.",
     "likes": 128,
     "retweets": 34,
@@ -28,8 +28,8 @@
 
   {
     "id": "post2",
-    "author": "CityArtsWatch",
-    "handle": "@cityartswatch",
+    "author": "247politics",
+    "handle": "@247politics",
     "text": "Trump to close Kennedy Center for two years, amid falling ticket sales and a growing list of performer cancellations, sparking more controversy over DC venue",
     "likes": 92,
     "retweets": 18,
