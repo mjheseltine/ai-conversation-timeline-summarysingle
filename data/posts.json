@@ -1,0 +1,127 @@
+[
+  {
+    "id": "post1",
+    "author": "NewsWire",
+    "handle": "@newswire",
+    "text": "A U.S. official has alleged wrongdoing by U.S. spy chief Tulsi Gabbard in a complaint that is so highly classified it has sparked months of wrangling over how to share it with Congress, according to people familiar with the matter.",
+    "likes": 128,
+    "retweets": 34,
+    "timestamp": "1h",
+    "image": "images/post1_thumb.jpg",
+    "aiSummary": "A classified whistleblower complaint alleging misconduct by the director of national intelligence has been withheld from Congress for months over secrecy and privilege disputes, raising concerns that national security classification may be delaying or blocking oversight.",
+    "replies": [
+      {
+        "author": "CivicsNerd",
+        "handle": "@civicsnerd",
+        "text": "TRANSLATION: Tulsi Gabbard is exposing actual vote fraud, and is close to exposing more, so us, and our friends are getting scared and need to do some misdirection."
+      },
+      {
+        "author": "HistoryBuff",
+        "handle": "@hbuff",
+        "text": "More likely selling US intel to Russia."
+      },
+      {
+        "author": "PatriotTex",
+        "handle": "@patriot_tex",
+        "text": "That sounds bad"
+      },
+        {
+        "author": "MilkshakeMan",
+        "handle": "@milkshakes",
+        "text": "Literally all of us at home already know what it is, she is a Russia asset."
+      }
+    ]
+  },
+
+  {
+    "id": "post2",
+    "author": "PoliticsDaily",
+    "handle": "@pol_daily",
+    "text": "Trump to close Kennedy Center for two years, amid falling ticket sales and a growing list of performer cancellations, sparking more controversy over DC venue",
+    "likes": 92,
+    "retweets": 18,
+    "timestamp": "2h",
+    "image": "images/post2_thumb.jpg",
+    "aiSummary": "Trump plans to close the Kennedy Center for two years following artist boycotts and falling attendance after his takeover of its board and branding. Critics note the venue underwent a $250M renovation in 2019 and question whether “dilapidation” claims mask governance and backlash issues.",
+    "replies": [
+      {
+        "author": "TruthGuard",
+        "handle": "@truthguard",
+        "text": "Trump wants to own every building in America and have his name on every bulding in America"
+      },
+      {
+        "author": "Justice4All",
+        "handle": "@justice_watch",
+        "text": "Libs heads explode in...3...2...1"
+      },
+      {
+        "author": "Watcher",
+        "handle": "@watcher",
+        "text": "Trump closes Kennedy Center amidst declining visitation due to his marking the edifice with his own name. Trump believes in this way he can cover up the public rejection of his shameful desecration of a once popular and honorable memorial to JFK."
+      }
+    ]
+  },
+
+  {
+    "id": "post3",
+    "author": "wowsomuchpolitics",
+    "handle": "@pol_wow",
+    "text": "House Speaker Mike Johnson (R-Louisiana) said that he is “confident” he will have enough support from Republicans in the House conference to end the partial government shutdown by Tuesday.",
+    "likes": 98,
+    "retweets": 17,
+    "timestamp": "3h",
+    "image": "images/post3_thumb.jpg",
+    "aiSummary": "The government shutdown hinges on funding for DHS after a controversial ICE operation, with Democrats demanding limits like body cameras and warrants. Speaker Mike Johnson says reopening depends on near-total GOP unity, highlighting how immigration enforcement drives shutdowns under narrow majorities.",
+    "replies": [
+      {
+        "author": "Ant Hooper",
+        "handle": "@hooper",
+        "text": "Don’t cave to the Left. Hold fast to what is right."
+      },
+      {
+        "author": "Andreas",
+        "handle": "@andre_as",
+        "text": "Johnson is on the way out... Republicans are starting to run after the Texas loss on Saturday."
+      },
+      {
+        "author": "JimBoot",
+        "handle": "@jimboot",
+        "text": "Mike Johnson's confidence in knowing what his caucus will do is as reliable as his confidence in knowing what unhinged nonsense Trump will post online at 2am on any given day."
+      }
+    ]
+  },
+
+  {
+    "id": "post4",
+    "author": "USPolitics",
+    "handle": "@uspolitics",
+    "text": "A federal judge ruled that 5-year-old Liam Conejo Ramos, detained by ICE alongside his father, should not remain in federal custody. Data and analysis suggest ICE is increasingly detaining young children amid President Trump’s mass deportation efforts.",
+    "likes": 101,
+    "retweets": 51,
+    "timestamp": "5h",
+    "image": "images/post4_thumb.jpg",
+    "aiSummary": "A federal judge ordered the release of a five-year-old asylum-seeking child and his father, criticizing ICE tactics as quota-driven rather than humanitarian. The case has intensified scrutiny of child detention practices amid pending asylum claims.",
+    "replies": [
+      {
+        "author": "RFKStan",
+        "handle": "@rfkfan",
+        "text": "I hope his family sues for every penny they can get. Poor kid. I hope he isn’t totally scarred for life from this experience"
+      },
+      {
+        "author": "Heritage83",
+        "handle": "@heritage83",
+        "text": "He belongs with his family, and his family belongs in their home country, NOT HERE."
+      },
+      {
+        "author": "NYCInsider",
+        "handle": "@nyc_insider",
+        "text": "MAGA is furious kids are being released from jail"
+      },
+       {
+        "author": "EmmaB",
+        "handle": "@emmab",
+        "text": "Families should stay together no matter what"
+      }
+    ]
+  }
+]
