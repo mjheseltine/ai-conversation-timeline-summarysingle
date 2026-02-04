@@ -54,31 +54,31 @@
   },
 
   {
-    "id": "post3",
-    "author": "wowsomuchpolitics",
-    "handle": "@pol_wow",
-    "text": "House Speaker Mike Johnson (R-Louisiana) said that he is “confident” he will have enough support from Republicans in the House conference to end the partial government shutdown by Tuesday.",
-    "likes": 98,
-    "retweets": 17,
-    "timestamp": "3h",
-    "image": "images/post3_thumb.jpg",
-    "aiSummary": "The government shutdown hinges on funding for DHS after a controversial ICE operation, with Democrats demanding limits like body cameras and warrants. Speaker Mike Johnson says reopening depends on near-total GOP unity, highlighting how immigration enforcement drives shutdowns under narrow majorities.",
-    "replies": [
-      { "author": "Ant Hooper", "handle": "@hooper", "text": "Don’t cave to the Left. Hold fast to what is right." },
-      { "author": "Andreas", "handle": "@andre_as", "text": "Johnson is on the way out... Republicans are starting to run after the Texas loss on Saturday." },
-      { "author": "JimBoot", "handle": "@jimboot", "text": "Mike Johnson's confidence in knowing what his caucus will do is as reliable as his confidence in knowing what unhinged nonsense Trump will post online at 2am on any given day." },
+  "id": "post3",
+  "author": "wowsomuchpolitics",
+  "handle": "@pol_wow",
+  "text": "Trump signs $1.2T funding bill to end shutdown after the House passed spending bills to end the partial government shutdown and buy time for bipartisan talks on new ICE accountability measures. ",
+  "likes": 98,
+  "retweets": 17,
+  "timestamp": "3h",
+  "image": "images/post3_thumb.jpg",
+  "aiSummary": "Trump signed a $1.2 trillion funding package ending the brief partial shutdown after a narrow 217–215 House vote. Most agencies are funded through September, but DHS is funded for only two weeks, setting up a Feb. 13 deadline and a high-stakes fight over immigration enforcement. Democrats are demanding changes to ICE/CBP operations after federal agents fatally shot two U.S. citizens in Minneapolis in January.",
+  "replies": [
+    { "author": "FedWorker", "handle": "@fedworker", "text": "Finally. Shutdowns are a nightmare for workers and contractors. Stop doing this to people." },
+    { "author": "BudgetWatcher", "handle": "@budgetwatch", "text": "So we’re right back here in two weeks for DHS. Kicking the can, but faster." },
+    { "author": "CSpanJunkie", "handle": "@cspanjunkie", "text": "217–215 is razor thin. That’s not a mandate; that’s barely functioning." },
+    { "author": "PolicyGrad", "handle": "@policygrad", "text": "Funding most agencies to September but DHS to Feb 13 is basically a planned cliffhanger." },
+    { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "DHS being the leverage point makes sense politically, but it’s a risky way to run homeland security." },
 
-      { "author": "FedWorker", "handle": "@fedworker", "text": "Shutdown brinkmanship hits paychecks and services. Please just vote on clean funding." },
-      { "author": "Proceduralist", "handle": "@proceduralist", "text": "If they have the votes, do it now. Announcing confidence doesn’t reopen agencies." },
-      { "author": "CSpanJunkie", "handle": "@cspanjunkie", "text": "Curious what the actual sticking point language is. The details always matter." },
-      { "author": "BudgetWatcher", "handle": "@budgetwatch", "text": "We do this every year and still act surprised. It’s exhausting." },
-      { "author": "UnionRep", "handle": "@unionrep", "text": "Federal contractors get hurt too and often have fewer protections than employees." },
-      { "author": "PolicyGrad", "handle": "@policygrad", "text": "Even short shutdowns add costs. The 'savings' argument is a myth in practice." },
-      { "author": "NewsSkimmer", "handle": "@newsskim", "text": "Tuesday feels like a talking point. What changed since yesterday?" },
-      { "author": "CautiousCentrist", "handle": "@cautiouscent", "text": "Both sides should stop tying unrelated policy demands to funding the basics." },
-      { "author": "NumbersGuy", "handle": "@numbersguy", "text": "Markets shrug until the pain is visible, then everyone panics. Predictable cycle." }
-    ]
-  },
+    { "author": "LegalEagle", "handle": "@legaleagle", "text": "If agents killed two citizens, oversight and standards are legitimate to debate—regardless of immigration politics." },
+    { "author": "WarrantDebate", "handle": "@warrantdebate", "text": "The warrant idea is interesting: where’s the line between enforcement efficiency and civil liberties?" },
+    { "author": "MinneapolisLocal", "handle": "@mplslocal", "text": "The January shootings should be fully investigated before anyone shrugs this off as ‘politics’." },
+    { "author": "GOPStrategist", "handle": "@gopstrategist", "text": "GOP letting Trump negotiate is predictable, but it also means everything hinges on his priorities." },
+    { "author": "DemsUnite", "handle": "@demsunite", "text": "Calling DHS ‘rogue’ is strong language, but DHS shouldn’t be above accountability." },
+    { "author": "ShutdownSkeptic", "handle": "@shutdownskeptic", "text": "This whole process incentivizes brinkmanship. Two-week DHS funding proves it." },
+    { "author": "CentristView", "handle": "@centristview", "text": "Fund the government, then negotiate policy. Mixing them guarantees chaos every time." }
+  ]
+},
 
   {
     "id": "post4",
