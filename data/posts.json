@@ -17,10 +17,10 @@
 
       { "author": "PolicyWonk", "handle": "@policywonk", "text": "If it’s classified, Congress still needs a process for oversight. Otherwise classification becomes a shield." },
       { "author": "DataDiver", "handle": "@datadiver", "text": "What’s the timeline here—when was the complaint filed vs when oversight committees were notified?" },
-      { "author": "LibertyLens", "handle": "@libertylens", "text": "Feels like we keep learning about these things only after months of internal fighting." },
+      { "author": "LibertyLens", "handle": "@libertylens", "text": "If you’re really on the up and up, why has a whistleblower report that would typically go to Congress in 7-14 days been sitting in a safe for 8 months?" },
       { "author": "SkepticalSam", "handle": "@skepticals", "text": "Hard to judge without specifics. But the secrecy wrangling is the story in itself." },
       { "author": "CivicProcess", "handle": "@civicprocess", "text": "There should be a standard secure reading room protocol so these disputes don’t stall indefinitely." },
-      { "author": "NatSecNina", "handle": "@natsecnina", "text": "If this involves sources/methods, it’s complicated. But oversight still has to happen." },
+      { "author": "NatSecNina", "handle": "@natsecnina", "text": "Release the whistleblower report. Who are you working for?" },
       { "author": "ThreadReader", "handle": "@threadreader", "text": "Anyone have a reliable breakdown of what’s alleged (without speculation)?" },
       { "author": "CapitolWatch", "handle": "@capitolwatch", "text": "The bigger issue is whether privilege claims can override lawful congressional review." }
     ]
@@ -68,7 +68,7 @@
     { "author": "BudgetWatcher", "handle": "@budgetwatch", "text": "So we’re right back here in two weeks for DHS. Kicking the can, but faster." },
     { "author": "CSpanJunkie", "handle": "@cspanjunkie", "text": "217–215 is razor thin. That’s not a mandate; that’s barely functioning." },
     { "author": "PolicyGrad", "handle": "@policygrad", "text": "Funding most agencies to September but DHS to Feb 13 is basically a planned cliffhanger." },
-    { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "DHS being the leverage point makes sense politically, but it’s a risky way to run homeland security." },
+    { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "Why? This should have been done to shut ICE down . Can you imagine how much better this country would be if they would have given the their money to all the local police for personal and equipment?" },
 
     { "author": "LegalEagle", "handle": "@legaleagle", "text": "If agents killed two citizens, oversight and standards are legitimate to debate—regardless of immigration politics." },
     { "author": "WarrantDebate", "handle": "@warrantdebate", "text": "The warrant idea is interesting: where’s the line between enforcement efficiency and civil liberties?" },
@@ -76,7 +76,7 @@
     { "author": "GOPStrategist", "handle": "@gopstrategist", "text": "GOP letting Trump negotiate is predictable, but it also means everything hinges on his priorities." },
     { "author": "DemsUnite", "handle": "@demsunite", "text": "Calling DHS ‘rogue’ is strong language, but DHS shouldn’t be above accountability." },
     { "author": "ShutdownSkeptic", "handle": "@shutdownskeptic", "text": "This whole process incentivizes brinkmanship. Two-week DHS funding proves it." },
-    { "author": "CentristView", "handle": "@centristview", "text": "Fund the government, then negotiate policy. Mixing them guarantees chaos every time." }
+    { "author": "CentristView", "handle": "@centristview", "text": "Triple their budget, triple their deports. Only good solution." }
   ]
 },
 
@@ -96,13 +96,13 @@
       { "author": "NYCInsider", "handle": "@nyc_insider", "text": "MAGA is furious kids are being released from jail" },
       { "author": "EmmaB", "handle": "@emmab", "text": "Families should stay together no matter what" },
 
-      { "author": "LegalEagle", "handle": "@legaleagle", "text": "Judges stepping in usually means the process broke down somewhere. The child’s welfare should be paramount." },
+      { "author": "LegalEagle", "handle": "@legaleagle", "text": "I contend that any trauma was caused by the parent(s.) The officers cared for, fed him and deescalated the situation. Can you imagine watching your cowardly father run away from you, leaving you with strangers?" },
       { "author": "CaseReader", "handle": "@casereader", "text": "Does anyone have the actual ruling text or a reputable summary of the judge’s reasoning?" },
-      { "author": "HumanRights", "handle": "@humanrights", "text": "Detaining young children should be a last resort with strict safeguards." },
+      { "author": "HumanRights", "handle": "@humanrights", "text": "A federal judge = Liberal Activist" },
       { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "Regardless of politics, clear standards and accountability would reduce abuse." },
       { "author": "SocialWorker", "handle": "@socialwork", "text": "Even short detention can be traumatic at that age. Support services matter." },
       { "author": "CivicDebate", "handle": "@civicdebate", "text": "We need enforcement that doesn’t create irreversible harm to kids." },
-      { "author": "ProcessMatters", "handle": "@processmatters", "text": "If data show an increase, oversight should ask why and whether policy changed." },
+      { "author": "ProcessMatters", "handle": "@processmatters", "text": "If data show an increase, oversight should ask why!." },
       { "author": "LocalReporter", "handle": "@localreport", "text": "Stories like this get lost in the aggregate. The human impact is real." }
     ]
   }
