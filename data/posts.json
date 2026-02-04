@@ -1,8 +1,8 @@
 [
   {
     "id": "post1",
-    "author": "NewsWire",
-    "handle": "@newswire",
+    "author": "OtherSideNotes",
+    "handle": "@othersidenotes",
     "text": "A U.S. official has alleged wrongdoing by U.S. spy chief Tulsi Gabbard in a complaint that is so highly classified it has sparked months of wrangling over how to share it with Congress, according to people familiar with the matter.",
     "likes": 128,
     "retweets": 34,
@@ -10,26 +10,26 @@
     "image": "images/post1_thumb.jpg",
     "aiSummary": "A classified whistleblower complaint alleging misconduct by the director of national intelligence has been withheld from Congress for months over secrecy and privilege disputes, raising concerns that national security classification may be delaying or blocking oversight.",
     "replies": [
-      { "author": "CivicsNerd", "handle": "@civicsnerd", "text": "TRANSLATION: Tulsi Gabbard is exposing actual vote fraud, and is close to exposing more, so us, and our friends are getting scared and need to do some misdirection." },
-      { "author": "HistoryBuff", "handle": "@hbuff", "text": "More likely selling US intel to Russia." },
-      { "author": "PatriotTex", "handle": "@patriot_tex", "text": "That sounds bad" },
-      { "author": "MilkshakeMan", "handle": "@milkshakes", "text": "Literally all of us at home already know what it is, she is a Russia asset." },
+      { "author": "🌼 DeePlorable 👩‍💻", "handle": "@msnicole329", "text": "TRANSLATION: Tulsi Gabbard is exposing actual vote fraud, and is close to exposing more, so us, and our friends are getting scared and need to do some misdirection." },
+      { "author": "MikeJ", "handle": "@mikejohns77", "text": "More likely selling US intel to Russia." },
+      { "author": "becca", "handle": "@beccaleeeeeee", "text": "That sounds bad" },
+      { "author": "MisterChip", "handle": "@2010MisterChip", "text": "Literally all of us at home already know what it is, she is a Russia asset." },
 
-      { "author": "PolicyWonk", "handle": "@policywonk", "text": "If it’s classified, Congress still needs a process for oversight. Otherwise classification becomes a shield." },
-      { "author": "DataDiver", "handle": "@datadiver", "text": "What’s the timeline here—when was the complaint filed vs when oversight committees were notified?" },
-      { "author": "LibertyLens", "handle": "@libertylens", "text": "If you’re really on the up and up, why has a whistleblower report that would typically go to Congress in 7-14 days been sitting in a safe for 8 months?" },
-      { "author": "SkepticalSam", "handle": "@skepticals", "text": "Hard to judge without specifics. But the secrecy wrangling is the story in itself." },
-      { "author": "CivicProcess", "handle": "@civicprocess", "text": "There should be a standard secure reading room protocol so these disputes don’t stall indefinitely." },
-      { "author": "NatSecNina", "handle": "@natsecnina", "text": "Release the whistleblower report. Who are you working for?" },
-      { "author": "ThreadReader", "handle": "@threadreader", "text": "Anyone have a reliable breakdown of what’s alleged (without speculation)?" },
-      { "author": "CapitolWatch", "handle": "@capitolwatch", "text": "The bigger issue is whether privilege claims can override lawful congressional review." }
+      { "author": "AlanN", "handle": "@alneuhauser", "text": "If it’s classified, Congress still needs a process for oversight. Otherwise classification becomes a shield." },
+      { "author": "AaronK", "handle": "@akesselheim", "text": "What’s the timeline here—when was the complaint filed vs when oversight committees were notified?" },
+      { "author": "uri🧡💜", "handle": "@heidirosie", "text": "If you’re really on the up and up, why has a whistleblower report that would typically go to Congress in 7-14 days been sitting in a safe for 8 months?" },
+      { "author": "Gayle", "handle": "@whosaclown", "text": "Hard to judge without specifics. But the secrecy wrangling is the story in itself." },
+      { "author": "ReadingRoom", "handle": "@securebriefing", "text": "There should be a standard secure reading room protocol so these disputes don’t stall indefinitely." },
+      { "author": "LDH", "handle": "@ldh_ed", "text": "Release the whistleblower report. Who are you working for?" },
+      { "author": "BillW", "handle": "@billwortz", "text": "Anyone have a reliable breakdown of what’s alleged (without speculation)?" },
+      { "author": "ThreadDigest", "handle": "@threaddigest", "text": "The bigger issue is whether privilege claims can override lawful congressional review." }
     ]
   },
 
   {
     "id": "post2",
-    "author": "PoliticsDaily",
-    "handle": "@pol_daily",
+    "author": "CityArtsWatch",
+    "handle": "@cityartswatch",
     "text": "Trump to close Kennedy Center for two years, amid falling ticket sales and a growing list of performer cancellations, sparking more controversy over DC venue",
     "likes": 92,
     "retweets": 18,
@@ -37,53 +37,53 @@
     "image": "images/post2_thumb.jpg",
     "aiSummary": "Trump plans to close the Kennedy Center for two years following artist boycotts and falling attendance after his takeover of its board and branding. Critics note the venue underwent a $250M renovation in 2019 and question whether “dilapidation” claims mask governance and backlash issues.",
     "replies": [
-      { "author": "TruthGuard", "handle": "@truthguard", "text": "Trump wants to own every building in America and have his name on every bulding in America" },
-      { "author": "Justice4All", "handle": "@justice_watch", "text": "Libs heads explode in...3...2...1" },
-      { "author": "Watcher", "handle": "@watcher", "text": "Trump closes Kennedy Center amidst declining visitation due to his marking the edifice with his own name. Trump believes in this way he can cover up the public rejection of his shameful desecration of a once popular and honorable memorial to JFK." },
+      { "author": "DanS", "handle": "@dansenor", "text": "Trump wants to own every building in America and have his name on every bulding in America" },
+      { "author": "OtherSideNotes", "handle": "@othersidenotes", "text": "Libs heads explode in...3...2...1" },
+      { "author": "howard", "handle": "@mrdackman", "text": "Trump closes Kennedy Center amidst declining visitation due to his marking the edifice with his own name. Trump believes in this way he can cover up the public rejection of his shameful desecration of a once popular and honorable memorial to JFK." },
 
-      { "author": "ArtsFanDC", "handle": "@artsfandc", "text": "Two years is a long time to shut down a cultural venue. What’s the actual renovation plan?" },
-      { "author": "BudgetHawk", "handle": "@budgethawk", "text": "If sales are down, closing removes revenue entirely. Curious what the financial model is." },
-      { "author": "StageDoor", "handle": "@stagedoor", "text": "Performers cancel when they don’t trust governance. Fix governance first." },
-      { "author": "CivicArts", "handle": "@civicarts", "text": "DC already struggles with arts funding—this will ripple to staff and local gigs." },
-      { "author": "RenovationNerd", "handle": "@reno_nerd", "text": "Wasn’t there a major renovation not that long ago? Confused about the 'dilapidated' claim." },
-      { "author": "TicketTally", "handle": "@tickettally", "text": "Attendance trends matter, but boycotts are also a signal. Both can be true." },
-      { "author": "NeutralObserver", "handle": "@neutralob", "text": "This story feels like politics colliding with an institution that needs stability." },
-      { "author": "OperaSeat12", "handle": "@operaseat12", "text": "I just want great shows and predictable seasons. Leadership drama ruins programming." },
-      { "author": "DCResident", "handle": "@dcr", "text": "Staff and vendors will take the hit long before any politician does." }
+      { "author": "theaterkid88", "handle": "@theaterkid88", "text": "Two years is a long time to shut down a cultural venue. What’s the actual renovation plan?" },
+      { "author": "numbers_guy", "handle": "@budgetmath", "text": "If sales are down, closing removes revenue entirely. Curious what the financial model is." },
+      { "author": "stageleft", "handle": "@stagedoorleft", "text": "Performers cancel when they don’t trust governance. Fix governance first." },
+      { "author": "dc_local", "handle": "@dclocalvoice", "text": "DC already struggles with arts funding—this will ripple to staff and local gigs." },
+      { "author": "reno_truth", "handle": "@renotruth", "text": "Wasn’t there a major renovation not that long ago? Confused about the 'dilapidated' claim." },
+      { "author": "seat12", "handle": "@balconyseat12", "text": "Attendance trends matter, but boycotts are also a signal. Both can be true." },
+      { "author": "policyish", "handle": "@policyadjacent", "text": "This story feels like politics colliding with an institution that needs stability." },
+      { "author": "just_a_fan", "handle": "@justafanhere", "text": "I just want great shows and predictable seasons. Leadership drama ruins programming." },
+      { "author": "uniondad", "handle": "@uniondad1974", "text": "Staff and vendors will take the hit long before any politician does." }
     ]
   },
 
   {
-  "id": "post3",
-  "author": "247politics",
-  "handle": "@pol_wow",
-  "text": "Trump signs $1.2T funding bill to end shutdown after the House passed spending bills to end the partial government shutdown and buy time for bipartisan talks on new ICE accountability measures. ",
-  "likes": 98,
-  "retweets": 17,
-  "timestamp": "3h",
-  "image": "images/post3_thumb.jpg",
-  "aiSummary": "Trump signed a $1.2 trillion funding package ending the brief partial shutdown after a narrow 217–215 House vote. Most agencies are funded through September, but DHS is funded for only two weeks, setting up a Feb. 13 deadline and a high-stakes fight over immigration enforcement. Democrats are demanding changes to ICE/CBP operations after federal agents fatally shot two U.S. citizens in Minneapolis in January.",
-  "replies": [
-    { "author": "FedWorker", "handle": "@fedworker", "text": "Finally. Shutdowns are a nightmare for workers and contractors. Stop doing this to people." },
-    { "author": "BudgetWatcher", "handle": "@budgetwatch", "text": "So we’re right back here in two weeks for DHS. Kicking the can, but faster." },
-    { "author": "CSpanJunkie", "handle": "@cspanjunkie", "text": "217–215 is razor thin. That’s not a mandate; that’s barely functioning." },
-    { "author": "PolicyGrad", "handle": "@policygrad", "text": "Funding most agencies to September but DHS to Feb 13 is basically a planned cliffhanger." },
-    { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "Why? This should have been done to shut ICE down . Can you imagine how much better this country would be if they would have given the their money to all the local police for personal and equipment?" },
+    "id": "post3",
+    "author": "MetroPolicy",
+    "handle": "@metropolicy",
+    "text": "Trump signs $1.2T funding bill to end shutdown after the House passed spending bills to end the partial government shutdown and buy time for bipartisan talks on new ICE accountability measures. ",
+    "likes": 98,
+    "retweets": 17,
+    "timestamp": "3h",
+    "image": "images/post3_thumb.jpg",
+    "aiSummary": "Trump signed a $1.2 trillion funding package ending the brief partial shutdown after a narrow 217–215 House vote. Most agencies are funded through September, but DHS is funded for only two weeks, setting up a Feb. 13 deadline and a high-stakes fight over immigration enforcement. Democrats are demanding changes to ICE/CBP operations after federal agents fatally shot two U.S. citizens in Minneapolis in January.",
+    "replies": [
+      { "author": "fedmom", "handle": "@fedmomlife", "text": "Finally. Shutdowns are a nightmare for workers and contractors. Stop doing this to people." },
+      { "author": "MarkS", "handle": "@marksreads", "text": "So we’re right back here in two weeks for DHS. Kicking the can, but faster." },
+      { "author": "cspanjunkie", "handle": "@cspanjunkie", "text": "217–215 is razor thin. That’s not a mandate; that’s barely functioning." },
+      { "author": "gradschooler", "handle": "@policygradlife", "text": "Funding most agencies to September but DHS to Feb 13 is basically a planned cliffhanger." },
+      { "author": "borderhotake", "handle": "@borderhotake", "text": "Why? This should have been done to shut ICE down . Can you imagine how much better this country would be if they would have given the their money to all the local police for personal and equipment?" },
 
-    { "author": "LegalEagle", "handle": "@legaleagle", "text": "If agents killed two citizens, oversight and standards are legitimate to debate—regardless of immigration politics." },
-    { "author": "WarrantDebate", "handle": "@warrantdebate", "text": "The warrant idea is interesting: where’s the line between enforcement efficiency and civil liberties?" },
-    { "author": "MinneapolisLocal", "handle": "@mplslocal", "text": "The January shootings should be fully investigated before anyone shrugs this off as ‘politics’." },
-    { "author": "GOPStrategist", "handle": "@gopstrategist", "text": "GOP letting Trump negotiate is predictable, but it also means everything hinges on his priorities." },
-    { "author": "DemsUnite", "handle": "@demsunite", "text": "Calling DHS ‘rogue’ is strong language, but DHS shouldn’t be above accountability." },
-    { "author": "ShutdownSkeptic", "handle": "@shutdownskeptic", "text": "This whole process incentivizes brinkmanship. Two-week DHS funding proves it." },
-    { "author": "CentristView", "handle": "@centristview", "text": "Triple their budget, triple their deports. Only good solution." }
-  ]
-},
+      { "author": "legaleagle-ish", "handle": "@lawadjacent", "text": "If agents killed two citizens, oversight and standards are legitimate to debate—regardless of immigration politics." },
+      { "author": "warrants?", "handle": "@warrantdebate", "text": "The warrant idea is interesting: where’s the line between enforcement efficiency and civil liberties?" },
+      { "author": "mpls_local", "handle": "@mplsneighbor", "text": "The January shootings should be fully investigated before anyone shrugs this off as ‘politics’." },
+      { "author": "hillwatcher", "handle": "@hillwatching", "text": "GOP letting Trump negotiate is predictable, but it also means everything hinges on his priorities." },
+      { "author": "communityvoice", "handle": "@communityvoice", "text": "Calling DHS ‘rogue’ is strong language, but DHS shouldn’t be above accountability." },
+      { "author": "shutdown_skeptic", "handle": "@shutdownsuck", "text": "This whole process incentivizes brinkmanship. Two-week DHS funding proves it." },
+      { "author": "hardliner", "handle": "@hardlineview", "text": "Triple their budget, triple their deports. Only good solution." }
+    ]
+  },
 
   {
     "id": "post4",
-    "author": "USPolitics",
-    "handle": "@uspolitics",
+    "author": "PublicSquare",
+    "handle": "@publicsquare",
     "text": "A federal judge ruled that 5-year-old Liam Conejo Ramos, detained by ICE alongside his father, should not remain in federal custody. Data and analysis suggest ICE is increasingly detaining young children amid President Trump’s mass deportation efforts.",
     "likes": 101,
     "retweets": 51,
@@ -91,19 +91,19 @@
     "image": "images/post4_thumb.jpg",
     "aiSummary": "A federal judge ordered the release of a five-year-old asylum-seeking child and his father, criticizing ICE tactics as quota-driven rather than humanitarian. The case has intensified scrutiny of child detention practices amid pending asylum claims.",
     "replies": [
-      { "author": "RFKStan", "handle": "@rfkfan", "text": "I hope his family sues for every penny they can get. Poor kid. I hope he isn’t totally scarred for life from this experience" },
-      { "author": "Heritage83", "handle": "@heritage83", "text": "He belongs with his family, and his family belongs in their home country, NOT HERE." },
-      { "author": "NYCInsider", "handle": "@nyc_insider", "text": "MAGA is furious kids are being released from jail" },
-      { "author": "EmmaB", "handle": "@emmab", "text": "Families should stay together no matter what" },
+      { "author": "paige", "handle": "@paigel", "text": "I hope his family sues for every penny they can get. Poor kid. I hope he isn’t totally scarred for life from this experience" },
+      { "author": "MikeH", "handle": "@mikeh", "text": "He belongs with his family, and his family belongs in their home country, NOT HERE." },
+      { "author": "nyc_insider", "handle": "@nyc_insider", "text": "MAGA is furious kids are being released from jail" },
+      { "author": "emma_b", "handle": "@emmab", "text": "Families should stay together no matter what" },
 
-      { "author": "LegalEagle", "handle": "@legaleagle", "text": "I contend that any trauma was caused by the parent(s.) The officers cared for, fed him and deescalated the situation. Can you imagine watching your cowardly father run away from you, leaving you with strangers?" },
-      { "author": "CaseReader", "handle": "@casereader", "text": "Does anyone have the actual ruling text or a reputable summary of the judge’s reasoning?" },
-      { "author": "HumanRights", "handle": "@humanrights", "text": "A federal judge = Liberal Activist" },
-      { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "Regardless of politics, clear standards and accountability would reduce abuse." },
-      { "author": "SocialWorker", "handle": "@socialwork", "text": "Even short detention can be traumatic at that age. Support services matter." },
-      { "author": "CivicDebate", "handle": "@civicdebate", "text": "We need enforcement that doesn’t create irreversible harm to kids." },
-      { "author": "ProcessMatters", "handle": "@processmatters", "text": "If data show an increase, oversight should ask why!." },
-      { "author": "LocalReporter", "handle": "@localreport", "text": "Stories like this get lost in the aggregate. The human impact is real." }
+      { "author": "dad_thoughts", "handle": "@dadthoughts", "text": "I contend that any trauma was caused by the parent(s.) The officers cared for, fed him and deescalated the situation. Can you imagine watching your cowardly father run away from you, leaving you with strangers?" },
+      { "author": "case_reader", "handle": "@casereader", "text": "Does anyone have the actual ruling text or a reputable summary of the judge’s reasoning?" },
+      { "author": "just_saying", "handle": "@justsayingok", "text": "A federal judge = Liberal Activist" },
+      { "author": "border_process", "handle": "@borderprocess", "text": "Regardless of politics, clear standards and accountability would reduce abuse." },
+      { "author": "socialworkgal", "handle": "@socialworkgal", "text": "Even short detention can be traumatic at that age. Support services matter." },
+      { "author": "civicdad", "handle": "@civicdad", "text": "We need enforcement that doesn’t create irreversible harm to kids." },
+      { "author": "process_matters", "handle": "@processmatters", "text": "If data show an increase, oversight should ask why!." },
+      { "author": "localreporterish", "handle": "@localreportish", "text": "Stories like this get lost in the aggregate. The human impact is real." }
     ]
   }
 ]
