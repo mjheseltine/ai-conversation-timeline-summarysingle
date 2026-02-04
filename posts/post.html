@@ -275,17 +275,17 @@ fetch("../data/posts.json")
 
     renderMainPost(post);
 
-    // ✅ AI is now rendered as an in-thread exchange (request + response)
+    // ✅ AI is rendered as an in-thread exchange (request + response)
     // If you want to gate by condition, wrap this call in your treatment check.
     renderAIInThread(post);
 
-    // Render replies (first 5 visible, rest hidden)
+    // Replies: first 5 visible, rest hidden behind Show more
     renderRepliesWithShowMore(post.replies || []);
 
-    // Render any user comments (always visible, after replies)
+    // User comments always visible after replies
     renderUserComments();
 
-    // Reply box at the bottom (below whatever is visible)
+    // Reply box at the very bottom
     renderCommentBox();
   });
 
@@ -335,20 +335,59 @@ function renderMainPost(p) {
   };
 }
 
-// ---------- AI as in-thread exchange ----------
+// ---------- AI as in-thread exchange (randomized but stable per post per session) ----------
 function renderAIInThread(p) {
   if (!p.aiSummary) return;
+
+  const promptPool = [
+    "@AI, can you add context on this?",
+    "@AI, what's the key takeaway here?",
+    "@AI, summarize what happened and why it matters?",
+    "@AI, what are people arguing about in this story?",
+    "@AI, is there anything important I'm missing?",
+    "@AI, break this down in plain English?"
+  ];
+
+  const userPool = [
+    { name: "Jordan Miles", handle: "@jordanmiles" },
+    { name: "Casey Nguyen", handle: "@caseynguyen" },
+    { name: "Ava Thompson", handle: "@avathompson" },
+    { name: "Sam Patel", handle: "@sampatel" },
+    { name: "Riley Chen", handle: "@rileychen" },
+    { name: "Morgan Lee", handle: "@morganlee" }
+  ];
+
+  // Stable per post per session (so reloads don't change it)
+  const key = `aiThreadVariant_${postId}`;
+  let picked = null;
+
+  try {
+    picked = JSON.parse(sessionStorage.getItem(key) || "null");
+  } catch (e) {}
+
+  if (!picked) {
+    picked = {
+      promptIdx: Math.floor(Math.random() * promptPool.length),
+      userIdx: Math.floor(Math.random() * userPool.length)
+    };
+    sessionStorage.setItem(key, JSON.stringify(picked));
+  }
+
+  const promptText = promptPool[picked.promptIdx];
+  const u = userPool[picked.userIdx];
 
   // 1) "User" request post
   const req = document.createElement("article");
   req.className = "post ai-request";
   req.innerHTML = `
-    <div class="avatar" style="background:linear-gradient(135deg,#0ea5e9,#38bdf8)">AI</div>
+    <div class="avatar" style="background:${colorFromName(u.name)}">
+      ${initials(u.name)}
+    </div>
     <div class="content">
       <div class="meta">
-        <span class="name">Jordan Miles</span> @jmiles · 1m
+        <span class="name">${u.name}</span> ${u.handle} · 1m
       </div>
-      <div class="text">@AI, tell me more about this?</div>
+      <div class="text">${promptText}</div>
     </div>
   `;
   comments.appendChild(req);
@@ -375,7 +414,6 @@ function renderRepliesWithShowMore(replies) {
   replies.forEach((r, idx) => {
     const el = renderReply(r);
 
-    // Hide replies after the first N
     if (idx >= INITIAL_VISIBLE_REPLIES) {
       el.style.display = "none";
       hiddenReplyEls.push(el);
@@ -426,7 +464,7 @@ function renderReply(r) {
   return el;
 }
 
-// ---------- User Comments (always visible at end) ----------
+// ---------- User Comments ----------
 function renderUserComments() {
   state.comments.forEach(c => {
     const el = document.createElement("article");
@@ -444,7 +482,7 @@ function renderUserComments() {
   });
 }
 
-// ---------- COMMENT BOX (mounted at bottom) ----------
+// ---------- Comment Box (bottom) ----------
 function renderCommentBox() {
   const box = document.createElement("div");
   box.className = "comment-box";
