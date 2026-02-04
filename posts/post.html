@@ -82,27 +82,52 @@ body { background:var(--bg); margin:20px; }
 }
 
 .actions button {
-  background:none;
-  border:none;
-  cursor:pointer;
-  padding:4px 6px;
-  border-radius:6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 8px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+
+  font-family: Inter,system-ui,-apple-system,"Segoe UI",Roboto,
+               "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji";
 }
+
 .actions button:hover { background:#f1f5f9; }
+
+.actions button span {
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
 
 .liked { color:#e0245e; }
 .retweeted { color:#17bf63; }
-
-/* AI SUMMARY */
-.ai-summary {
-  background:#fffdf8;
-  border:1px solid #fbe5b3;
-}
 
 /* USER COMMENT HIGHLIGHT */
 .user-comment {
   background:#f0f7ff;
   border:1px solid #dbeafe;
+}
+
+/* AI IN-THREAD STYLES */
+.ai-request {
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+}
+
+.ai-response {
+  background:#fffdf8;
+  border:1px solid #fbe5b3;
 }
 
 /* SHOW MORE */
@@ -165,10 +190,10 @@ body { background:var(--bg); margin:20px; }
     <a class="home-btn" href="../index.html">← Return to timeline</a>
   </div>
 
-  <!-- MAIN THREAD -->
+  <!-- MAIN POST -->
   <div id="thread"></div>
 
-  <!-- COMMENTS / REPLIES -->
+  <!-- COMMENTS / REPLIES (includes AI in-thread items too) -->
   <div id="comments"></div>
 
   <!-- SHOW MORE BUTTON AREA -->
@@ -176,7 +201,7 @@ body { background:var(--bg); margin:20px; }
     <button class="show-more-btn" id="showMoreBtn">Show more comments</button>
   </div>
 
-  <!-- REPLY BOX (NOW AT BOTTOM, ABOVE BOTTOM NAV) -->
+  <!-- REPLY BOX (BOTTOM, ABOVE NAV) -->
   <div id="replyBoxMount"></div>
 
   <!-- BOTTOM NAV -->
@@ -249,15 +274,18 @@ fetch("../data/posts.json")
     }
 
     renderMainPost(post);
-    renderAISummary(post);
+
+    // ✅ AI is now rendered as an in-thread exchange (request + response)
+    // If you want to gate by condition, wrap this call in your treatment check.
+    renderAIInThread(post);
 
     // Render replies (first 5 visible, rest hidden)
     renderRepliesWithShowMore(post.replies || []);
 
-    // Render any user comments (always visible)
+    // Render any user comments (always visible, after replies)
     renderUserComments();
 
-    // Finally mount reply box at the bottom (so it's below visible comments)
+    // Reply box at the bottom (below whatever is visible)
     renderCommentBox();
   });
 
@@ -307,21 +335,37 @@ function renderMainPost(p) {
   };
 }
 
-// ---------- AI Summary ----------
-function renderAISummary(p) {
-  // NOTE: This still shows AI summaries in conversation view (your treatment logic can gate it later).
-  const el = document.createElement("article");
-  el.className = "post ai-summary";
+// ---------- AI as in-thread exchange ----------
+function renderAIInThread(p) {
+  if (!p.aiSummary) return;
 
-  el.innerHTML = `
-    <div class="avatar">🤖</div>
+  // 1) "User" request post
+  const req = document.createElement("article");
+  req.className = "post ai-request";
+  req.innerHTML = `
+    <div class="avatar" style="background:linear-gradient(135deg,#0ea5e9,#38bdf8)">AI</div>
     <div class="content">
-      <div class="name">AI Summary</div>
-      <div class="text">${p.aiSummary || ""}</div>
+      <div class="meta">
+        <span class="name">ContextSeeker</span> @contextseeker · 1m
+      </div>
+      <div class="text">@AI, tell me more about this?</div>
     </div>
   `;
+  comments.appendChild(req);
 
-  thread.appendChild(el);
+  // 2) AI response post (the summary)
+  const res = document.createElement("article");
+  res.className = "post ai-response";
+  res.innerHTML = `
+    <div class="avatar" style="background:linear-gradient(135deg,#111827,#374151)">🤖</div>
+    <div class="content">
+      <div class="meta">
+        <span class="name">AI</span> @ai_assistant · 1m
+      </div>
+      <div class="text">${p.aiSummary}</div>
+    </div>
+  `;
+  comments.appendChild(res);
 }
 
 // ---------- Replies with Show More ----------
@@ -343,21 +387,20 @@ function renderRepliesWithShowMore(replies) {
   if (hiddenReplyEls.length > 0) {
     showMoreWrap.style.display = "flex";
     showMoreBtn.textContent = `Show more comments (${hiddenReplyEls.length})`;
-  showMoreBtn.onclick = () => {
-  const revealedCount = hiddenReplyEls.length;
+    showMoreBtn.onclick = () => {
+      const revealedCount = hiddenReplyEls.length;
 
-  hiddenReplyEls.forEach(e => (e.style.display = ""));
-  hiddenReplyEls = [];
-  showMoreWrap.style.display = "none";
+      hiddenReplyEls.forEach(e => (e.style.display = ""));
+      hiddenReplyEls = [];
+      showMoreWrap.style.display = "none";
 
-  // ✅ Qualtrics tracking
-  window.parent.postMessage({
-    type: "SHOW_MORE_COMMENTS",
-    postId,
-    revealedCount
-  }, "*");
-};
-
+      // ✅ Qualtrics tracking
+      window.parent.postMessage({
+        type: "SHOW_MORE_COMMENTS",
+        postId,
+        revealedCount
+      }, "*");
+    };
   } else {
     showMoreWrap.style.display = "none";
   }
@@ -383,7 +426,7 @@ function renderReply(r) {
   return el;
 }
 
-// ---------- User Comments (always visible, at the end of comments) ----------
+// ---------- User Comments (always visible at end) ----------
 function renderUserComments() {
   state.comments.forEach(c => {
     const el = document.createElement("article");
