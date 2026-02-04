@@ -17,7 +17,6 @@
 }
 
 body { background:var(--bg); margin:20px; }
-
 .container { max-width:800px; margin:auto; }
 
 .top-nav {
@@ -28,9 +27,6 @@ body { background:var(--bg); margin:20px; }
   align-items: center;
   margin-bottom: 16px;
 }
-
-
-
 
 .home-btn {
   text-decoration:none;
@@ -63,15 +59,8 @@ body { background:var(--bg); margin:20px; }
 
 .content { flex:1; }
 
-.meta {
-  font-size:13px;
-  color:var(--muted);
-}
-
-.name {
-  font-weight:700;
-  margin-right:6px;
-}
+.meta { font-size:13px; color:var(--muted); }
+.name { font-weight:700; margin-right:6px; }
 
 .text {
   margin-top:6px;
@@ -99,7 +88,6 @@ body { background:var(--bg); margin:20px; }
   padding:4px 6px;
   border-radius:6px;
 }
-
 .actions button:hover { background:#f1f5f9; }
 
 .liked { color:#e0245e; }
@@ -117,9 +105,27 @@ body { background:var(--bg); margin:20px; }
   border:1px solid #dbeafe;
 }
 
+/* SHOW MORE */
+.show-more-wrap {
+  display:flex;
+  justify-content:center;
+  margin: 6px 0 18px;
+}
+
+.show-more-btn {
+  background: #eef2ff;
+  color: #1f6feb;
+  border: 1px solid #c7d2fe;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.show-more-btn:hover { background:#e0e7ff; }
+
 /* COMMENT BOX */
 .comment-box {
-  margin-bottom:16px;
+  margin: 18px 0 16px;
 }
 
 .comment-box textarea {
@@ -141,13 +147,12 @@ body { background:var(--bg); margin:20px; }
   font-weight:600;
   cursor:pointer;
 }
-  
-  .bottom-nav {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 60px;
-}
 
+.bottom-nav {
+  display:flex;
+  justify-content:center;
+  margin:40px 0 60px;
+}
 </style>
 </head>
 
@@ -160,17 +165,24 @@ body { background:var(--bg); margin:20px; }
     <a class="home-btn" href="../index.html">← Return to timeline</a>
   </div>
 
+  <!-- MAIN THREAD -->
   <div id="thread"></div>
+
+  <!-- COMMENTS / REPLIES -->
+  <div id="comments"></div>
+
+  <!-- SHOW MORE BUTTON AREA -->
+  <div class="show-more-wrap" id="showMoreWrap" style="display:none;">
+    <button class="show-more-btn" id="showMoreBtn">Show more comments</button>
+  </div>
+
+  <!-- REPLY BOX (NOW AT BOTTOM, ABOVE BOTTOM NAV) -->
+  <div id="replyBoxMount"></div>
 
   <!-- BOTTOM NAV -->
   <div class="bottom-nav">
     <a class="home-btn" href="../index.html">← Return to timeline</a>
   </div>
-
-</div>
-
-
-  <div id="thread"></div>
 
 </div>
 
@@ -196,13 +208,13 @@ const postId = new URLSearchParams(location.search).get("id");
 
 let timelineState = JSON.parse(sessionStorage.getItem("timelineState") || "{}");
 
-const state = timelineState[postId] ||= {
+const state = (timelineState[postId] ||= {
   likes:0,
   retweets:0,
   comments:[],
   liked:false,
   retweeted:false
-};
+});
 
 function save() {
   timelineState[postId] = state;
@@ -210,15 +222,24 @@ function save() {
 }
 
 const thread = document.getElementById("thread");
+const comments = document.getElementById("comments");
+const showMoreWrap = document.getElementById("showMoreWrap");
+const showMoreBtn = document.getElementById("showMoreBtn");
+const replyBoxMount = document.getElementById("replyBoxMount");
 
 // ---------- Timing ----------
 const convoStart = Date.now();
+
+// ---------- Config ----------
+const INITIAL_VISIBLE_REPLIES = 5;
+let hiddenReplyEls = [];
 
 // ---------- Load Post ----------
 fetch("../data/posts.json")
   .then(r => r.json())
   .then(posts => {
     const post = posts.find(p => p.id === postId);
+    if (!post) return;
 
     if (!state.initialized) {
       state.likes = post.likes || 0;
@@ -229,9 +250,15 @@ fetch("../data/posts.json")
 
     renderMainPost(post);
     renderAISummary(post);
-    renderCommentBox();      // ⬅ MOVED HERE
-    post.replies.forEach(r => renderReply(r));
+
+    // Render replies (first 5 visible, rest hidden)
+    renderRepliesWithShowMore(post.replies || []);
+
+    // Render any user comments (always visible)
     renderUserComments();
+
+    // Finally mount reply box at the bottom (so it's below visible comments)
+    renderCommentBox();
   });
 
 // ---------- Render Main ----------
@@ -253,7 +280,6 @@ function renderMainPost(p) {
       <div class="actions">
         <button class="like ${state.liked ? "liked":""}">❤️ <span>${state.likes}</span></button>
         <button class="retweet ${state.retweeted ? "retweeted":""}">🔁 <span>${state.retweets}</span></button>
-        <button class="comment">💬 <span>${p.replies.length + state.comments.length}</span></button>
       </div>
     </div>
   `;
@@ -263,6 +289,7 @@ function renderMainPost(p) {
   el.querySelector(".like").onclick = () => {
     state.liked = !state.liked;
     state.likes += state.liked ? 1 : -1;
+    el.querySelector(".like").classList.toggle("liked", state.liked);
     el.querySelector(".like span").textContent = state.likes;
     save();
 
@@ -272,6 +299,7 @@ function renderMainPost(p) {
   el.querySelector(".retweet").onclick = () => {
     state.retweeted = !state.retweeted;
     state.retweets += state.retweeted ? 1 : -1;
+    el.querySelector(".retweet").classList.toggle("retweeted", state.retweeted);
     el.querySelector(".retweet span").textContent = state.retweets;
     save();
 
@@ -281,6 +309,7 @@ function renderMainPost(p) {
 
 // ---------- AI Summary ----------
 function renderAISummary(p) {
+  // NOTE: This still shows AI summaries in conversation view (your treatment logic can gate it later).
   const el = document.createElement("article");
   el.className = "post ai-summary";
 
@@ -288,14 +317,82 @@ function renderAISummary(p) {
     <div class="avatar">🤖</div>
     <div class="content">
       <div class="name">AI Summary</div>
-      <div class="text">${p.aiSummary}</div>
+      <div class="text">${p.aiSummary || ""}</div>
     </div>
   `;
 
   thread.appendChild(el);
 }
 
-// ---------- COMMENT BOX (MOVED) ----------
+// ---------- Replies with Show More ----------
+function renderRepliesWithShowMore(replies) {
+  hiddenReplyEls = [];
+
+  replies.forEach((r, idx) => {
+    const el = renderReply(r);
+
+    // Hide replies after the first N
+    if (idx >= INITIAL_VISIBLE_REPLIES) {
+      el.style.display = "none";
+      hiddenReplyEls.push(el);
+    }
+
+    comments.appendChild(el);
+  });
+
+  if (hiddenReplyEls.length > 0) {
+    showMoreWrap.style.display = "flex";
+    showMoreBtn.textContent = `Show more comments (${hiddenReplyEls.length})`;
+    showMoreBtn.onclick = () => {
+      hiddenReplyEls.forEach(e => (e.style.display = ""));
+      hiddenReplyEls = [];
+      showMoreWrap.style.display = "none";
+      // Reply box is already below comments, so it naturally moves down.
+    };
+  } else {
+    showMoreWrap.style.display = "none";
+  }
+}
+
+// ---------- Render Reply ----------
+function renderReply(r) {
+  const el = document.createElement("article");
+  el.className = "post";
+
+  el.innerHTML = `
+    <div class="avatar" style="background:${colorFromName(r.author)}">
+      ${initials(r.author)}
+    </div>
+    <div class="content">
+      <div class="meta">
+        <span class="name">${r.author}</span> ${r.handle || ""}
+      </div>
+      <div class="text">${r.text}</div>
+    </div>
+  `;
+
+  return el;
+}
+
+// ---------- User Comments (always visible, at the end of comments) ----------
+function renderUserComments() {
+  state.comments.forEach(c => {
+    const el = document.createElement("article");
+    el.className = "post user-comment";
+
+    el.innerHTML = `
+      <div class="avatar" style="background:#2563eb">YOU</div>
+      <div class="content">
+        <div class="name">You</div>
+        <div class="text">${c}</div>
+      </div>
+    `;
+
+    comments.appendChild(el);
+  });
+}
+
+// ---------- COMMENT BOX (mounted at bottom) ----------
 function renderCommentBox() {
   const box = document.createElement("div");
   box.className = "comment-box";
@@ -305,7 +402,7 @@ function renderCommentBox() {
     <button id="postReply">Reply</button>
   `;
 
-  thread.appendChild(box);
+  replyBoxMount.appendChild(box);
 
   box.querySelector("#postReply").onclick = () => {
     const ta = box.querySelector("#userReply");
@@ -323,42 +420,6 @@ function renderCommentBox() {
 
     location.reload();
   };
-}
-
-// ---------- Replies ----------
-function renderReply(r) {
-  const el = document.createElement("article");
-  el.className = "post";
-
-  el.innerHTML = `
-    <div class="avatar" style="background:${colorFromName(r.author)}">
-      ${initials(r.author)}
-    </div>
-    <div class="content">
-      <div class="name">${r.author}</div>
-      <div class="text">${r.text}</div>
-    </div>
-  `;
-
-  thread.appendChild(el);
-}
-
-// ---------- User Comments ----------
-function renderUserComments() {
-  state.comments.forEach(c => {
-    const el = document.createElement("article");
-    el.className = "post user-comment";
-
-    el.innerHTML = `
-      <div class="avatar" style="background:#2563eb">YOU</div>
-      <div class="content">
-        <div class="name">You</div>
-        <div class="text">${c}</div>
-      </div>
-    `;
-
-    thread.appendChild(el);
-  });
 }
 
 // ---------- Scroll Depth ----------
