@@ -10,26 +10,19 @@
     "image": "images/post1_thumb.jpg",
     "aiSummary": "A classified whistleblower complaint alleging misconduct by the director of national intelligence has been withheld from Congress for months over secrecy and privilege disputes, raising concerns that national security classification may be delaying or blocking oversight.",
     "replies": [
-      {
-        "author": "CivicsNerd",
-        "handle": "@civicsnerd",
-        "text": "TRANSLATION: Tulsi Gabbard is exposing actual vote fraud, and is close to exposing more, so us, and our friends are getting scared and need to do some misdirection."
-      },
-      {
-        "author": "HistoryBuff",
-        "handle": "@hbuff",
-        "text": "More likely selling US intel to Russia."
-      },
-      {
-        "author": "PatriotTex",
-        "handle": "@patriot_tex",
-        "text": "That sounds bad"
-      },
-        {
-        "author": "MilkshakeMan",
-        "handle": "@milkshakes",
-        "text": "Literally all of us at home already know what it is, she is a Russia asset."
-      }
+      { "author": "CivicsNerd", "handle": "@civicsnerd", "text": "TRANSLATION: Tulsi Gabbard is exposing actual vote fraud, and is close to exposing more, so us, and our friends are getting scared and need to do some misdirection." },
+      { "author": "HistoryBuff", "handle": "@hbuff", "text": "More likely selling US intel to Russia." },
+      { "author": "PatriotTex", "handle": "@patriot_tex", "text": "That sounds bad" },
+      { "author": "MilkshakeMan", "handle": "@milkshakes", "text": "Literally all of us at home already know what it is, she is a Russia asset." },
+
+      { "author": "PolicyWonk", "handle": "@policywonk", "text": "If it’s classified, Congress still needs a process for oversight. Otherwise classification becomes a shield." },
+      { "author": "DataDiver", "handle": "@datadiver", "text": "What’s the timeline here—when was the complaint filed vs when oversight committees were notified?" },
+      { "author": "LibertyLens", "handle": "@libertylens", "text": "Feels like we keep learning about these things only after months of internal fighting." },
+      { "author": "SkepticalSam", "handle": "@skepticals", "text": "Hard to judge without specifics. But the secrecy wrangling is the story in itself." },
+      { "author": "CivicProcess", "handle": "@civicprocess", "text": "There should be a standard secure reading room protocol so these disputes don’t stall indefinitely." },
+      { "author": "NatSecNina", "handle": "@natsecnina", "text": "If this involves sources/methods, it’s complicated. But oversight still has to happen." },
+      { "author": "ThreadReader", "handle": "@threadreader", "text": "Anyone have a reliable breakdown of what’s alleged (without speculation)?" },
+      { "author": "CapitolWatch", "handle": "@capitolwatch", "text": "The bigger issue is whether privilege claims can override lawful congressional review." }
     ]
   },
 
@@ -44,21 +37,19 @@
     "image": "images/post2_thumb.jpg",
     "aiSummary": "Trump plans to close the Kennedy Center for two years following artist boycotts and falling attendance after his takeover of its board and branding. Critics note the venue underwent a $250M renovation in 2019 and question whether “dilapidation” claims mask governance and backlash issues.",
     "replies": [
-      {
-        "author": "TruthGuard",
-        "handle": "@truthguard",
-        "text": "Trump wants to own every building in America and have his name on every bulding in America"
-      },
-      {
-        "author": "Justice4All",
-        "handle": "@justice_watch",
-        "text": "Libs heads explode in...3...2...1"
-      },
-      {
-        "author": "Watcher",
-        "handle": "@watcher",
-        "text": "Trump closes Kennedy Center amidst declining visitation due to his marking the edifice with his own name. Trump believes in this way he can cover up the public rejection of his shameful desecration of a once popular and honorable memorial to JFK."
-      }
+      { "author": "TruthGuard", "handle": "@truthguard", "text": "Trump wants to own every building in America and have his name on every bulding in America" },
+      { "author": "Justice4All", "handle": "@justice_watch", "text": "Libs heads explode in...3...2...1" },
+      { "author": "Watcher", "handle": "@watcher", "text": "Trump closes Kennedy Center amidst declining visitation due to his marking the edifice with his own name. Trump believes in this way he can cover up the public rejection of his shameful desecration of a once popular and honorable memorial to JFK." },
+
+      { "author": "ArtsFanDC", "handle": "@artsfandc", "text": "Two years is a long time to shut down a cultural venue. What’s the actual renovation plan?" },
+      { "author": "BudgetHawk", "handle": "@budgethawk", "text": "If sales are down, closing removes revenue entirely. Curious what the financial model is." },
+      { "author": "StageDoor", "handle": "@stagedoor", "text": "Performers cancel when they don’t trust governance. Fix governance first." },
+      { "author": "CivicArts", "handle": "@civicarts", "text": "DC already struggles with arts funding—this will ripple to staff and local gigs." },
+      { "author": "RenovationNerd", "handle": "@reno_nerd", "text": "Wasn’t there a major renovation not that long ago? Confused about the 'dilapidated' claim." },
+      { "author": "TicketTally", "handle": "@tickettally", "text": "Attendance trends matter, but boycotts are also a signal. Both can be true." },
+      { "author": "NeutralObserver", "handle": "@neutralob", "text": "This story feels like politics colliding with an institution that needs stability." },
+      { "author": "OperaSeat12", "handle": "@operaseat12", "text": "I just want great shows and predictable seasons. Leadership drama ruins programming." },
+      { "author": "DCResident", "handle": "@dcr", "text": "Staff and vendors will take the hit long before any politician does." }
     ]
   },
 
@@ -73,21 +64,19 @@
     "image": "images/post3_thumb.jpg",
     "aiSummary": "The government shutdown hinges on funding for DHS after a controversial ICE operation, with Democrats demanding limits like body cameras and warrants. Speaker Mike Johnson says reopening depends on near-total GOP unity, highlighting how immigration enforcement drives shutdowns under narrow majorities.",
     "replies": [
-      {
-        "author": "Ant Hooper",
-        "handle": "@hooper",
-        "text": "Don’t cave to the Left. Hold fast to what is right."
-      },
-      {
-        "author": "Andreas",
-        "handle": "@andre_as",
-        "text": "Johnson is on the way out... Republicans are starting to run after the Texas loss on Saturday."
-      },
-      {
-        "author": "JimBoot",
-        "handle": "@jimboot",
-        "text": "Mike Johnson's confidence in knowing what his caucus will do is as reliable as his confidence in knowing what unhinged nonsense Trump will post online at 2am on any given day."
-      }
+      { "author": "Ant Hooper", "handle": "@hooper", "text": "Don’t cave to the Left. Hold fast to what is right." },
+      { "author": "Andreas", "handle": "@andre_as", "text": "Johnson is on the way out... Republicans are starting to run after the Texas loss on Saturday." },
+      { "author": "JimBoot", "handle": "@jimboot", "text": "Mike Johnson's confidence in knowing what his caucus will do is as reliable as his confidence in knowing what unhinged nonsense Trump will post online at 2am on any given day." },
+
+      { "author": "FedWorker", "handle": "@fedworker", "text": "Shutdown brinkmanship hits paychecks and services. Please just vote on clean funding." },
+      { "author": "Proceduralist", "handle": "@proceduralist", "text": "If they have the votes, do it now. Announcing confidence doesn’t reopen agencies." },
+      { "author": "CSpanJunkie", "handle": "@cspanjunkie", "text": "Curious what the actual sticking point language is. The details always matter." },
+      { "author": "BudgetWatcher", "handle": "@budgetwatch", "text": "We do this every year and still act surprised. It’s exhausting." },
+      { "author": "UnionRep", "handle": "@unionrep", "text": "Federal contractors get hurt too and often have fewer protections than employees." },
+      { "author": "PolicyGrad", "handle": "@policygrad", "text": "Even short shutdowns add costs. The 'savings' argument is a myth in practice." },
+      { "author": "NewsSkimmer", "handle": "@newsskim", "text": "Tuesday feels like a talking point. What changed since yesterday?" },
+      { "author": "CautiousCentrist", "handle": "@cautiouscent", "text": "Both sides should stop tying unrelated policy demands to funding the basics." },
+      { "author": "NumbersGuy", "handle": "@numbersguy", "text": "Markets shrug until the pain is visible, then everyone panics. Predictable cycle." }
     ]
   },
 
@@ -102,26 +91,19 @@
     "image": "images/post4_thumb.jpg",
     "aiSummary": "A federal judge ordered the release of a five-year-old asylum-seeking child and his father, criticizing ICE tactics as quota-driven rather than humanitarian. The case has intensified scrutiny of child detention practices amid pending asylum claims.",
     "replies": [
-      {
-        "author": "RFKStan",
-        "handle": "@rfkfan",
-        "text": "I hope his family sues for every penny they can get. Poor kid. I hope he isn’t totally scarred for life from this experience"
-      },
-      {
-        "author": "Heritage83",
-        "handle": "@heritage83",
-        "text": "He belongs with his family, and his family belongs in their home country, NOT HERE."
-      },
-      {
-        "author": "NYCInsider",
-        "handle": "@nyc_insider",
-        "text": "MAGA is furious kids are being released from jail"
-      },
-       {
-        "author": "EmmaB",
-        "handle": "@emmab",
-        "text": "Families should stay together no matter what"
-      }
+      { "author": "RFKStan", "handle": "@rfkfan", "text": "I hope his family sues for every penny they can get. Poor kid. I hope he isn’t totally scarred for life from this experience" },
+      { "author": "Heritage83", "handle": "@heritage83", "text": "He belongs with his family, and his family belongs in their home country, NOT HERE." },
+      { "author": "NYCInsider", "handle": "@nyc_insider", "text": "MAGA is furious kids are being released from jail" },
+      { "author": "EmmaB", "handle": "@emmab", "text": "Families should stay together no matter what" },
+
+      { "author": "LegalEagle", "handle": "@legaleagle", "text": "Judges stepping in usually means the process broke down somewhere. The child’s welfare should be paramount." },
+      { "author": "CaseReader", "handle": "@casereader", "text": "Does anyone have the actual ruling text or a reputable summary of the judge’s reasoning?" },
+      { "author": "HumanRights", "handle": "@humanrights", "text": "Detaining young children should be a last resort with strict safeguards." },
+      { "author": "BorderPolicy", "handle": "@borderpolicy", "text": "Regardless of politics, clear standards and accountability would reduce abuse." },
+      { "author": "SocialWorker", "handle": "@socialwork", "text": "Even short detention can be traumatic at that age. Support services matter." },
+      { "author": "CivicDebate", "handle": "@civicdebate", "text": "We need enforcement that doesn’t create irreversible harm to kids." },
+      { "author": "ProcessMatters", "handle": "@processmatters", "text": "If data show an increase, oversight should ask why and whether policy changed." },
+      { "author": "LocalReporter", "handle": "@localreport", "text": "Stories like this get lost in the aggregate. The human impact is real." }
     ]
   }
 ]
